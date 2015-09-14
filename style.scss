@@ -1,9 +1,43 @@
-body {
-  margin:0;
+$primaryColor:wheat;
+$accentLight:#a0a0a0;
+$baseColor:#28231d;
+$accentDark:#54391b;
+$defaultFont:"Special Elite";
+$headerFont:"Rye";
+
+
+html, body{
   padding:0;
-  background:#fafafc;
-  color:#1c1c1a;
-  font-family:sans-serif;
+  margin:0;
+  }
+    body{
+      background:url('Melamine-wood-004.png');
+  color:$primaryColor;
+  font-family:$defaultFont;
   text-align:center;
+  padding:0;
+  margin:0;
   }
 
+label, input {
+  margin:.5em;
+  }
+#TMDashboard {
+  color:$primaryColor;
+  border-top:2px solid $primaryColor;
+  border-bottom:2px solid $primaryColor;
+  max-width:500px;
+  margin:auto;
+  text-transform:uppercase;
+  }
+#visitingYear {
+  color:$primaryColor;
+
+}
+
+ #header {
+   margin-top:300px;
+   h1 {
+     font-family:$headerFont;
+     }
+       }

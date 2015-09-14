@@ -1,6 +1,9 @@
 * Time Machine Adventure
-#+BEGIN_EXAMPLE
-  index.html
-  style.css
-  timeMachine.js
-#+END_EXAMPLE
+The /Time Machine Adventure/ is an educational game in which the player pilots a time machine into the distant past. Along the way, the time-traveller will visit important events in the history of the species, the planet, & the cosmos.
+* How to use 
+The app is very bare-bones at the moment, all I've implemented are
+- a display to show the year
+- a slider to control the time machine's speed
+
+To preview the game, download the folder to your computer. Unzip if necessary, then open the folder and open =index.html=--you may need to right click the file to open it with the right program.
+Currently tested on the latest versions of Chrome, Firefox & Safari.

@@ -1,9 +1,32 @@
-body {
-  margin: 0;
+html, body {
   padding: 0;
-  background: #fafafc;
-  color: #1c1c1a;
-  font-family: sans-serif;
-  text-align: center; }
+  margin: 0; }
+
+body {
+  background: url("Melamine-wood-004.png");
+  color: wheat;
+  font-family: "Special Elite";
+  text-align: center;
+  padding: 0;
+  margin: 0; }
+
+label, input {
+  margin: .5em; }
+
+#TMDashboard {
+  color: wheat;
+  border-top: 2px solid wheat;
+  border-bottom: 2px solid wheat;
+  max-width: 500px;
+  margin: auto;
+  text-transform: uppercase; }
+
+#visitingYear {
+  color: wheat; }
+
+#header {
+  margin-top: 300px; }
+  #header h1 {
+    font-family: "Rye"; }
 
 /*# sourceMappingURL=style.css.map */
