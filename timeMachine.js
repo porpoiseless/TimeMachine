@@ -40,7 +40,15 @@ var TimeMachine = function() {
     };
     // time navigation
     tm.jump = function(){
-	visitingYear += parseInt(rate);
+	var theYear = visitingYear + parseInt(rate);
+	if (theYear > presentYear) {
+	    visitingYear = presentYear;
+	    document.getElementById("chronoLever").value = 0;
+	    rate = 0;
+	    alert("Sorry, there are no chronoports on the future side of year " +presentYear+ ".");
+	} else {
+	    visitingYear = theYear;
+	};
     };
     // methods for display
     tm.draw = function(){
@@ -54,21 +62,12 @@ var TimeMachine = function() {
 	};
 	return yearDisplay;
     };
-    // ==============================
-    	
-    // var TMButton = function(buttonMessage, buttonEffect, buttonId){
-    // 	var theButton = createEl("button", buttonMessage, buttonId);
-    // 	elAddEventListener(buttonId, "click", function(){
-    // 	    buttonEffect();
-    // 	    // console.log("You are now in the year " + tm.year + "!");
-    // 	    tm.update();
-    // 	});
-    // };
     // implement a slider to change the time machine's rate
     var syncRateToLever = function() {
 	rate = document.getElementById("chronoLever").value;
 	//	console.log(rate);
     };
+    
     var ChronoLever = function(){
 	var theSlider = document.createElement('input');
 	theSlider.type = "range";
@@ -90,10 +89,6 @@ var TimeMachine = function() {
     };
     tm.draw();
     var tmSlider = new ChronoLever();
-    // tm.forward = new TMButton("Go forward in time!", tm.increment, "forwardInTime");
-    // tm.stop = new TMButton("Stop the Machine!", function(){
-    // 	alert("Brakes not implemented yet!"); });
-    // tm.backward = new TMButton("Go backward in time!", tm.decrement, "backwardInTime");
 };
 // =========================
 // test fns

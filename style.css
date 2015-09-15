@@ -3,26 +3,50 @@ html, body {
   margin: 0; }
 
 body {
-  background: url("Melamine-wood-004.png");
-  color: wheat;
+  background: url("Melamine-wood-005.png");
+  color: #2a2a2a;
   font-family: "Special Elite";
   text-align: center;
   padding: 0;
   margin: 0; }
 
 label, input {
-  margin: .5em; }
+  margin: .5em;
+  position: relative; }
+
+label {
+  display: block; }
+
+input {
+  width: 80%; }
+
+input:before, input:after {
+  color: #2a2a2a;
+  font-family: "Special Elite";
+  position: absolute;
+  top: 10px; }
+
+input:before {
+  content: "Past";
+  right: 100%;
+  margin-right: 1em; }
+
+input:after {
+  content: "Future";
+  left: 100%;
+  margin-left: 1em; }
 
 #TMDashboard {
-  color: wheat;
-  border-top: 2px solid wheat;
-  border-bottom: 2px solid wheat;
+  margin: auto auto 0 auto;
+  color: #2a2a2a;
+  border-top: 2px solid #2a2a2a;
+  border-bottom: 2px solid #2a2a2a;
+  padding: 1em;
   max-width: 500px;
-  margin: auto;
   text-transform: uppercase; }
 
 #visitingYear {
-  color: wheat; }
+  color: #2a2a2a; }
 
 #header {
   margin-top: 300px; }

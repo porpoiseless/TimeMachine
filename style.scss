@@ -1,6 +1,6 @@
-$primaryColor:wheat;
-$accentLight:#a0a0a0;
-$baseColor:#28231d;
+$primaryColor:#2a2a2a;
+$accentLight:#fa5;
+$baseColor:#fcfcfa;
 $accentDark:#54391b;
 $defaultFont:"Special Elite";
 $headerFont:"Rye";
@@ -11,7 +11,7 @@ html, body{
   margin:0;
   }
     body{
-      background:url('Melamine-wood-004.png');
+      background:url('Melamine-wood-005.png');
   color:$primaryColor;
   font-family:$defaultFont;
   text-align:center;
@@ -21,13 +21,47 @@ html, body{
 
 label, input {
   margin:.5em;
+  position:relative;
   }
+    label {
+      display:block;
+      }
+    input {
+      width:80%;
+      }
+        input:before, input:after {
+        color:$primaryColor;
+        font-family:$defaultFont;
+        position:absolute;
+        top:10px;
+        }
+input:before {
+  content:"Past";
+  right:100%;
+  margin-right:1em;
+
+  }
+input:after {
+  content:"Future";
+  left:100%;
+  margin-left:1em;
+
+  }
+
+
+
+          
 #TMDashboard {
+  margin: auto auto 0 auto;
   color:$primaryColor;
+//  border-radius:1.5em;
   border-top:2px solid $primaryColor;
   border-bottom:2px solid $primaryColor;
+  padding:1em;
+//  background-color:#888;
+//  background:url('Melamine-wood-005.png');
+//  box-shadow:0 5px 10px rgba(15,15,15,0.5);
   max-width:500px;
-  margin:auto;
   text-transform:uppercase;
   }
 #visitingYear {
