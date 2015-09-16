@@ -25,48 +25,54 @@ var elAddEventListener = function(elId, theEvent, theFunction){
 // =========================
 // the time machine! 
 var TimeMachine = function() {
-    // important time machine vars
+    // vars
     var rate = 0; // speed at which machine travels thru time, may be +/-, init=0
     var presentYear = new Date().getFullYear(); // limit of travelling to future = present year
     var tm = this;
     var visitingYear = presentYear; // in what year is the machine located?
     // methods
-    // change years per second
-    tm.getRate = function() {
+    tm.getRate = function() {	// you can getRate() on the TimeMachine externally...
 	return rate;
     };
-    var setRate = function(newRate){
+    var setRate = function(newRate){ // but only the TimeMachine can setRate() itself
 	rate = newRate;
     };
     // time navigation
-    tm.jump = function(){
-	var theYear = visitingYear + parseInt(rate);
-	if (theYear > presentYear) {
-	    visitingYear = presentYear;
-	    document.getElementById("chronoLever").value = 0;
-	    rate = 0;
+    tm.jump = function(){	// moves through time at the specified rate
+	var theYear = visitingYear + parseInt(rate); // prospective year to jump to
+	if (theYear > presentYear) {		     // test if it's in the future
+	    visitingYear = presentYear;		     // 'crash' into present
+	    document.getElementById("chronoLever").value = 0; // reset lever
+	    rate = 0;					      // stop the machine & alert
 	    alert("Sorry, there are no chronoports on the future side of year " +presentYear+ ".");
-	} else {
+	} else {		// if the visit is legal do it
 	    visitingYear = theYear;
 	};
     };
     // methods for display
-    tm.draw = function(){
-	var yearDisplay = createEl("h1", visitingYear, "visitingYear");
-	return yearDisplay;
-    };
-    tm.update = function(){
-	var yearDisplay = document.getElementById("visitingYear");
-	if (yearDisplay.innerHTML != visitingYear) {
-	    yearDisplay.innerHTML = visitingYear;
+    var ChronoScope = function(){
+	this.draw = function(){
+	    var cs = document.createElement("h1");
+	    cs.innerHTML = visitingYear;
+	    cs.id = "visitingYear";
+	    document.body.appendChild(cs);
+	    return cs;
 	};
-	return yearDisplay;
+	this.update = function(){
+	    var yearDisplay = document.getElementById("visitingYear");
+	    yearDisplay.innerHTML = visitingYear;
+	    return yearDisplay;
+	};
+	this.draw();
     };
+    var tmScope = new ChronoScope();
     // implement a slider to change the time machine's rate
     var syncRateToLever = function() {
 	rate = document.getElementById("chronoLever").value;
 	//	console.log(rate);
     };
+    
+    
     
     var ChronoLever = function(){
 	var theSlider = document.createElement('input');
@@ -85,11 +91,11 @@ var TimeMachine = function() {
 	theDash.appendChild(theLabel);
 	theDash.appendChild(theSlider);
 	elAddEventListener("chronoLever","input", syncRateToLever);
-	window.setInterval(function(){tm.jump(),tm.update(); }, 1000); 
+	window.setInterval(function(){tm.jump(),tmScope.update(); }, 1000); 
     };
-    tm.draw();
-    var tmSlider = new ChronoLever();
-};
+	
+	var tmSlider = new ChronoLever();
+    };
 // =========================
 // test fns
 // =========================
