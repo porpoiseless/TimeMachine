@@ -3,75 +3,36 @@ $accentLight:#fa5;
 $baseColor:#fcfcfa;
 $accentDark:#54391b;
 $defaultFont:"Special Elite";
-$headerFont:"Rye";
-
-
 html, body{
   padding:0;
   margin:0;
   }
-    body{
-      background:url('Melamine-wood-005.png');
+body{
+  background:url('Melamine-wood-005.png');
   color:$primaryColor;
   font-family:$defaultFont;
-  text-align:center;
-  padding:0;
-  margin:0;
-  }
-
-label, input {
-  margin:.5em;
-  position:relative;
-  }
-    label {
-      display:block;
-      }
-    input {
-      width:80%;
-      }
-        input:before, input:after {
-        color:$primaryColor;
-        font-family:$defaultFont;
-        position:absolute;
-        top:10px;
-        }
-input:before {
-  content:"Past";
-  right:100%;
-  margin-right:1em;
-
-  }
-input:after {
-  content:"Future";
-  left:100%;
-  margin-left:1em;
-
-  }
-
-
-
-          
-#TMDashboard {
-  margin: auto auto 0 auto;
-  color:$primaryColor;
-//  border-radius:1.5em;
-  border-top:2px solid $primaryColor;
-  border-bottom:2px solid $primaryColor;
-  padding:1em;
-//  background-color:#888;
-//  background:url('Melamine-wood-005.png');
-//  box-shadow:0 5px 10px rgba(15,15,15,0.5);
-  max-width:500px;
-  text-transform:uppercase;
-  }
-#visitingYear {
-  color:$primaryColor;
-
 }
-
- #header {
-   margin-top:300px;
-   h1 {
-     font-family:$headerFont;
-     }
-       }
+#header {
+    text-align:center;
+    /* border:1px solid white; */
+}
+#app {
+    max-width:760px;
+    margin:auto;
+    text-align:center;
+ }
+#tmLever, #tmView {
+    display:inline-block;
+    /* background:gray; */
+    max-width:300px;
+    color:$primaryColor;
+    vertical-align:top;
+    text-align:left;
+    padding:1em;
+}
+#tmWormhole {
+    width:600px;
+    height:400px;
+    display:block;
+    background:black;
+}

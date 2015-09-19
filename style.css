@@ -5,52 +5,29 @@ html, body {
 body {
   background: url("Melamine-wood-005.png");
   color: #2a2a2a;
-  font-family: "Special Elite";
-  text-align: center;
-  padding: 0;
-  margin: 0; }
-
-label, input {
-  margin: .5em;
-  position: relative; }
-
-label {
-  display: block; }
-
-input {
-  width: 80%; }
-
-input:before, input:after {
-  color: #2a2a2a;
-  font-family: "Special Elite";
-  position: absolute;
-  top: 10px; }
-
-input:before {
-  content: "Past";
-  right: 100%;
-  margin-right: 1em; }
-
-input:after {
-  content: "Future";
-  left: 100%;
-  margin-left: 1em; }
-
-#TMDashboard {
-  margin: auto auto 0 auto;
-  color: #2a2a2a;
-  border-top: 2px solid #2a2a2a;
-  border-bottom: 2px solid #2a2a2a;
-  padding: 1em;
-  max-width: 500px;
-  text-transform: uppercase; }
-
-#visitingYear {
-  color: #2a2a2a; }
+  font-family: "Special Elite"; }
 
 #header {
-  margin-top: 300px; }
-  #header h1 {
-    font-family: "Rye"; }
+  text-align: center;
+  /* border:1px solid white; */ }
+
+#app {
+  max-width: 760px;
+  margin: auto;
+  text-align: center; }
+
+#tmLever, #tmView {
+  display: inline-block;
+  /* background:gray; */
+  max-width: 300px;
+  color: #2a2a2a;
+  vertical-align: top;
+  text-align: left;
+  padding: 1em; }
+
+#tmWormhole {
+  width: 100%;
+  display: block;
+  background: black; }
 
 /*# sourceMappingURL=style.css.map */

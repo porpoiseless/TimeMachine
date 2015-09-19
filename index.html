@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html><head>
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'><link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   </head>
   <body>
     <div id="header"><h1>Time Machine Adventure</h1></div>
-    <script type="text/javascript" src="timeMachine.js"></script>
+    <div id="app" data-ng-app="timeMachineAdventure" data-ng-controller="tmControl">
+       <div id="tmView">
+	<h1>{{tmYear}}</h1>
+      </div>
+      <form id="tmLever">
+	<label>Speed</label>
+	<input type="range" min="-10" max="10" step="1" data-ng-model="tmSpeed" >
+	<p>{{tmSpeed}} years/second</p>
+      </form>
+      <canvas id="tmWormhole"></canvas>
+     
+    </div>
+    <script type="text/javascript" src="tmAngular.js"></script>
   </body>
 </html>
