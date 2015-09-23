@@ -20,7 +20,10 @@ body{
     max-width:760px;
     margin:auto;
     text-align:center;
- }
+}
+input, label {
+    display:block;
+}
 #tmLever, #tmView {
     display:inline-block;
     /* background:gray; */
@@ -30,9 +33,11 @@ body{
     text-align:left;
     padding:1em;
 }
-#tmWormhole {
+#wormhole {
     width:600px;
     height:400px;
     display:block;
-    background:black;
+    background:#1a1a2c;
+    border-radius:200px;
+    margin:0 auto;
 }
